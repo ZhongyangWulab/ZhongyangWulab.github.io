@@ -1,59 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wu Laboratory</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Wu Laboratory at USTC studies how tissue physicochemical environments shape gene regulation, inflammation, and immune-cell fate.">
+  <title>Wu Laboratory | USTC</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #1f2937;
-      background: #ffffff;
+    :root { --ink:#102a43; --muted:#52677b; --blue:#087ca7; --cyan:#74c7d5; --pale:#eef8fa; --line:#d8e8ec; --white:#fff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--white); font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.65; }
+    a { color:inherit; }
+    .wrap { width:min(1120px,calc(100% - 40px)); margin:auto; }
+    nav { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+    .nav-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { text-decoration:none; font-size:20px; font-weight:760; letter-spacing:.02em; }
+    .brand span { color:var(--blue); }
+    .links { display:flex; gap:24px; font-size:14px; font-weight:650; }
+    .links a { text-decoration:none; }
+    .links a:hover { color:var(--blue); }
+    .hero { position:relative; overflow:hidden; padding:92px 0 84px; background:linear-gradient(135deg,#f8fcfd 15%,#e8f6f8 100%); }
+    .hero:after { content:""; position:absolute; width:460px; height:460px; right:-120px; top:-160px; border:72px solid rgba(116,199,213,.17); border-radius:50%; }
+    .hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:1.35fr .65fr; align-items:center; gap:68px; }
+    .eyebrow { margin:0 0 14px; color:var(--blue); font-size:13px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    h1 { max-width:820px; margin:0; font-family:Georgia,"Times New Roman",serif; font-size:clamp(45px,6vw,76px); line-height:1.06; letter-spacing:-.035em; }
+    .lead { max-width:720px; margin:28px 0 30px; color:#304b61; font-size:20px; }
+    .button { display:inline-block; padding:12px 20px; border-radius:999px; color:#fff; background:var(--blue); text-decoration:none; font-size:14px; font-weight:750; }
+    .button.alt { margin-left:10px; color:var(--blue); background:#fff; border:1px solid var(--line); }
+    .portrait { width:100%; max-width:310px; justify-self:end; border-radius:150px 150px 22px 22px; box-shadow:0 22px 55px rgba(16,42,67,.18); }
+    section { padding:82px 0; scroll-margin-top:70px; }
+    section:nth-of-type(even) { background:#fbfdfd; }
+    .section-head { max-width:750px; margin-bottom:38px; }
+    h2 { margin:0 0 12px; font-family:Georgia,"Times New Roman",serif; font-size:40px; letter-spacing:-.02em; }
+    .section-head p { color:var(--muted); font-size:18px; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .card { padding:28px; border:1px solid var(--line); border-radius:15px; background:#fff; box-shadow:0 8px 26px rgba(16,42,67,.05); }
+    .number { color:var(--cyan); font-size:13px; font-weight:850; letter-spacing:.12em; }
+    h3 { margin:10px 0 10px; font-size:20px; line-height:1.35; }
+    .card p { margin:0; color:var(--muted); }
+    .profile { display:grid; grid-template-columns:180px 1fr; gap:34px; align-items:start; max-width:850px; }
+    .profile img { width:180px; border-radius:10px; }
+    .profile h3 { margin-top:0; font-size:25px; }
+    .profile p { color:var(--muted); }
+    .publication { padding:28px; border-left:4px solid var(--cyan); background:var(--pale); }
+    .publication .journal { color:var(--blue); font-weight:800; }
+    .publication h3 { font-family:Georgia,"Times New Roman",serif; font-size:24px; }
+    .publication p { color:var(--muted); }
+    .join { display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; padding:42px; border-radius:18px; color:#fff; background:var(--ink); }
+    .join h2 { margin-bottom:8px; }
+    .join p { max-width:730px; margin:0; color:#d8e7ee; }
+    .join .button { white-space:nowrap; background:var(--cyan); color:var(--ink); }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+    .contact-grid p { color:var(--muted); }
+    footer { padding:28px 0; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+    @media (max-width:820px) {
+      .links { display:none; }
+      .hero { padding:64px 0; }
+      .hero-grid { grid-template-columns:1fr; gap:42px; }
+      .portrait { width:230px; justify-self:start; }
+      .cards,.contact-grid { grid-template-columns:1fr; }
+      .profile { grid-template-columns:120px 1fr; gap:22px; }
+      .profile img { width:120px; }
+      .join { grid-template-columns:1fr; }
     }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 100px 30px;
-    }
-
-    h1 {
-      font-size: 52px;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      color: #2563eb;
-      font-size: 25px;
-      font-weight: 500;
-    }
-
-    p {
-      max-width: 720px;
-      font-size: 19px;
-      line-height: 1.7;
+    @media (max-width:520px) {
+      .wrap { width:min(100% - 28px,1120px); }
+      section { padding:62px 0; }
+      .profile { grid-template-columns:1fr; }
+      .profile img { width:145px; }
+      .button.alt { display:block; width:max-content; margin:12px 0 0; }
     }
   </style>
 </head>
-
 <body>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">WU <span>LABORATORY</span></a>
+      <div class="links">
+        <a href="#research">Research</a><a href="#people">People</a><a href="#publications">Publications</a><a href="#join">Join Us</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Tissue physiology · Nuclear organization · Immunity</p>
+        <h1>How does tissue chemistry shape immune-cell state?</h1>
+        <p class="lead">We investigate how physicochemical features of tissue environments are sensed and encoded by transcriptional, chromatin, and translational systems to control inflammation and cell fate.</p>
+        <a class="button" href="#research">Explore our research</a><a class="button alt" href="#join">Join the lab</a>
+      </div>
+      <img class="portrait" src="assets/zhongyang-wu.jpg" alt="Professor Zhongyang Wu">
+    </div>
+  </header>
+
   <main>
-    <h1>Wu Laboratory</h1>
+    <section id="research">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Research</p><h2>From tissue chemistry to gene regulation</h2><p>Tissues are dynamic physicochemical environments. We seek general principles that explain how physiological variables reshape gene-regulatory machinery and guide immune-cell adaptation.</p></div>
+        <div class="cards">
+          <article class="card"><span class="number">01</span><h3>Physiological sensing by nuclear condensates</h3><p>We study how pH and related environmental cues alter the physical state of transcriptional and chromatin-regulatory assemblies.</p></article>
+          <article class="card"><span class="number">02</span><h3>Inflammatory gene regulation and memory</h3><p>We investigate how environmental states are encoded in chromatin organization, transcriptional dynamics, and lasting inflammatory programs.</p></article>
+          <article class="card"><span class="number">03</span><h3>Myeloid-cell identity and adaptation</h3><p>We explore how tissue physiology influences macrophage and monocyte state, differentiation, function, and disease-associated behavior.</p></article>
+        </div>
+      </div>
+    </section>
 
-    <h2>
-      Decoding how tissue environments shape immune-cell state and function
-    </h2>
+    <section id="people">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">People</p><h2>Meet the lab</h2></div>
+        <div class="profile">
+          <img src="assets/zhongyang-wu.jpg" alt="Zhongyang Wu">
+          <div><h3>Zhongyang Wu, Ph.D.</h3><p><strong>Professor and Principal Investigator</strong><br>University of Science and Technology of China<br>State Key Laboratory of Immune Response and Immunotherapy</p><p>Zhongyang Wu studies how tissue physicochemical environments regulate inflammatory responses through the physical organization of gene-control machinery. He received his Ph.D. from Tsinghua University and completed postdoctoral training at Boston Children’s Hospital and Harvard Medical School.</p></div>
+        </div>
+      </div>
+    </section>
 
-    <p>
-      We investigate how physicochemical features of tissue environments,
-      including pH, are sensed and encoded by transcriptional, chromatin,
-      and translational systems.
-    </p>
+    <section id="publications">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Selected publication</p><h2>Featured work</h2></div>
+        <article class="publication"><span class="journal">CELL · 2025</span><h3>Regulation of inflammatory responses by pH-dependent transcriptional condensates</h3><p>Wu Z., Pope S.D., et al. This study identifies transcriptional condensates as intracellular pH sensors that translate tissue acidity into gene-specific inflammatory responses.</p></article>
+      </div>
+    </section>
 
-    <p>
-      University of Science and Technology of China
-    </p>
+    <section id="join">
+      <div class="wrap">
+        <div class="join"><div><p class="eyebrow">Join us</p><h2>Build new biology with us</h2><p>We welcome inquiries from motivated postdoctoral fellows, Ph.D. students, and master’s students interested in immunology, gene regulation, chromatin biology, and the physical organization of cells. Please email a CV and a brief description of your research interests.</p></div><a class="button" href="mailto:wuzhongyang@ustc.edu.cn?subject=Application%20to%20the%20Wu%20Laboratory">Contact the lab</a></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Contact</p><h2>Find us at USTC</h2></div>
+        <div class="contact-grid"><div><h3>Email</h3><p><a href="mailto:wuzhongyang@ustc.edu.cn">wuzhongyang@ustc.edu.cn</a></p></div><div><h3>Address</h3><p>Yisuan Building, West Campus<br>University of Science and Technology of China<br>Hefei, Anhui, China</p></div></div>
+      </div>
+    </section>
   </main>
+  <footer><div class="wrap">© 2026 Wu Laboratory · University of Science and Technology of China</div></footer>
 </body>
 </html>
