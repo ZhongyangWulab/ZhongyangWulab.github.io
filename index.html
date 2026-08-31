@@ -28,6 +28,13 @@
     .button { display:inline-block; padding:12px 20px; border-radius:999px; color:#fff; background:var(--blue); text-decoration:none; font-size:14px; font-weight:750; }
     .button.alt { margin-left:10px; color:var(--blue); background:#fff; border:1px solid var(--line); }
     .portrait { width:100%; max-width:310px; justify-self:end; border-radius:150px 150px 22px 22px; box-shadow:0 22px 55px rgba(16,42,67,.18); }
+    .microscopy-card { width:100%; max-width:350px; justify-self:end; padding:22px; border:1px solid rgba(255,255,255,.14); border-radius:22px; background:#10171c; box-shadow:0 22px 55px rgba(16,42,67,.22); }
+    .micro-title { margin:0 0 15px; color:#dceaf0; font-size:12px; font-weight:750; letter-spacing:.11em; text-transform:uppercase; }
+    .micro-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .micro-panel { margin:0; }
+    .micro-panel img { display:block; width:100%; aspect-ratio:1; object-fit:cover; border-radius:9px; image-rendering:auto; }
+    .micro-panel figcaption { margin-top:8px; color:#fff; font-size:13px; font-weight:700; text-align:center; }
+    .micro-note { margin:13px 0 0; color:#91a7b2; font-size:11px; line-height:1.45; text-align:center; }
     section { padding:82px 0; scroll-margin-top:70px; }
     section:nth-of-type(even) { background:#fbfdfd; }
     .section-head { max-width:750px; margin-bottom:38px; }
@@ -58,6 +65,7 @@
       .hero { padding:64px 0; }
       .hero-grid { grid-template-columns:1fr; gap:42px; }
       .portrait { width:230px; justify-self:start; }
+      .microscopy-card { width:min(100%,350px); justify-self:start; }
       .cards,.contact-grid { grid-template-columns:1fr; }
       .profile { grid-template-columns:120px 1fr; gap:22px; }
       .profile img { width:120px; }
@@ -90,7 +98,20 @@
         <p class="lead">We investigate how physicochemical features of tissue environments are sensed and encoded by transcriptional, chromatin, and translational systems to control inflammation and cell fate.</p>
         <a class="button" href="#research">Explore our research</a><a class="button alt" href="#join">Join the lab</a>
       </div>
-      <img class="portrait" src="assets/zhongyang-wu.jpg" alt="Professor Zhongyang Wu">
+      <div class="microscopy-card" aria-label="Representative condensate images at neutral and acidic pH">
+        <p class="micro-title">pH-dependent condensate organization</p>
+        <div class="micro-grid">
+          <figure class="micro-panel">
+            <img src="assets/condensate-ph74.png" alt="Condensates at pH 7.4">
+            <figcaption>pH 7.4</figcaption>
+          </figure>
+          <figure class="micro-panel">
+            <img src="assets/condensate-ph65.png" alt="Condensates at pH 6.5">
+            <figcaption>pH 6.5</figcaption>
+          </figure>
+        </div>
+        <p class="micro-note">Representative fluorescence images</p>
+      </div>
     </div>
   </header>
 
