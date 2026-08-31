@@ -28,13 +28,15 @@
     .button { display:inline-block; padding:12px 20px; border-radius:999px; color:#fff; background:var(--blue); text-decoration:none; font-size:14px; font-weight:750; }
     .button.alt { margin-left:10px; color:var(--blue); background:#fff; border:1px solid var(--line); }
     .portrait { width:100%; max-width:310px; justify-self:end; border-radius:150px 150px 22px 22px; box-shadow:0 22px 55px rgba(16,42,67,.18); }
-    .microscopy-card { width:100%; max-width:350px; justify-self:end; padding:22px; border:1px solid rgba(255,255,255,.14); border-radius:22px; background:#10171c; box-shadow:0 22px 55px rgba(16,42,67,.22); }
-    .micro-title { margin:0 0 15px; color:#dceaf0; font-size:12px; font-weight:750; letter-spacing:.11em; text-transform:uppercase; }
-    .micro-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-    .micro-panel { margin:0; }
-    .micro-panel img { display:block; width:100%; aspect-ratio:1; object-fit:cover; border-radius:9px; image-rendering:auto; }
-    .micro-panel figcaption { margin-top:8px; color:#fff; font-size:13px; font-weight:700; text-align:center; }
-    .micro-note { margin:13px 0 0; color:#91a7b2; font-size:11px; line-height:1.45; text-align:center; }
+    .microscopy-card { width:100%; max-width:380px; justify-self:end; padding:28px 25px 23px; border:1px solid rgba(8,124,167,.14); border-radius:28px; background:rgba(255,255,255,.72); box-shadow:0 22px 55px rgba(16,42,67,.12); backdrop-filter:blur(9px); }
+    .micro-title { margin:0 0 21px; color:var(--ink); font-family:Georgia,"Times New Roman",serif; font-size:19px; font-weight:600; text-align:center; }
+    .micro-grid { display:grid; grid-template-columns:1fr 42px 1fr; align-items:center; gap:8px; }
+    .micro-panel { margin:0; text-align:center; }
+    .micro-panel img { display:block; width:112px; height:112px; margin:auto; object-fit:cover; border:5px solid #fff; border-radius:50%; box-shadow:0 8px 22px rgba(16,42,67,.17); image-rendering:auto; }
+    .micro-panel figcaption { margin-top:10px; color:var(--ink); font-size:13px; font-weight:750; text-align:center; }
+    .micro-arrow { position:relative; height:1px; background:linear-gradient(90deg,var(--cyan),#d96868); }
+    .micro-arrow:after { content:""; position:absolute; top:-4px; right:-1px; width:8px; height:8px; border-top:1px solid #d96868; border-right:1px solid #d96868; transform:rotate(45deg); }
+    .micro-note { margin:17px 0 0; color:var(--muted); font-size:11px; line-height:1.45; text-align:center; }
     section { padding:82px 0; scroll-margin-top:70px; }
     section:nth-of-type(even) { background:#fbfdfd; }
     .section-head { max-width:750px; margin-bottom:38px; }
@@ -99,18 +101,19 @@
         <a class="button" href="#research">Explore our research</a><a class="button alt" href="#join">Join the lab</a>
       </div>
       <div class="microscopy-card" aria-label="Representative condensate images at neutral and acidic pH">
-        <p class="micro-title">pH-dependent condensate organization</p>
+        <p class="micro-title">Condensates sense environmental pH</p>
         <div class="micro-grid">
           <figure class="micro-panel">
             <img src="assets/condensate-ph74.png" alt="Condensates at pH 7.4">
             <figcaption>pH 7.4</figcaption>
           </figure>
+          <span class="micro-arrow" aria-hidden="true"></span>
           <figure class="micro-panel">
             <img src="assets/condensate-ph65.png" alt="Condensates at pH 6.5">
             <figcaption>pH 6.5</figcaption>
           </figure>
         </div>
-        <p class="micro-note">Representative fluorescence images</p>
+        <p class="micro-note">Representative fluorescence images · BRD4 signal</p>
       </div>
     </div>
   </header>
