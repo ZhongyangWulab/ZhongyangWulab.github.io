@@ -47,6 +47,12 @@
     .publication .journal { color:var(--blue); font-weight:800; }
     .publication h3 { font-family:Georgia,"Times New Roman",serif; font-size:24px; }
     .publication p { color:var(--muted); }
+    .news-list { display:grid; gap:16px; max-width:900px; }
+    .news-item { display:grid; grid-template-columns:150px 1fr; gap:28px; padding:24px 0; border-top:1px solid var(--line); }
+    .news-item:last-child { border-bottom:1px solid var(--line); }
+    .news-date { color:var(--blue); font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .news-item h3 { margin:0 0 6px; }
+    .news-item p { margin:0; color:var(--muted); }
     .join { display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; padding:42px; border-radius:18px; color:#fff; background:var(--ink); }
     .join h2 { margin-bottom:8px; }
     .join p { max-width:730px; margin:0; color:#d8e7ee; }
@@ -64,6 +70,7 @@
       .profile { grid-template-columns:120px 1fr; gap:22px; }
       .profile img { width:120px; }
       .join { grid-template-columns:1fr; }
+      .news-item { grid-template-columns:1fr; gap:6px; }
     }
     @media (max-width:520px) {
       .wrap { width:min(100% - 28px,1120px); }
@@ -79,7 +86,7 @@
     <div class="wrap nav-inner">
       <a class="brand" href="#home">WU <span>LABORATORY</span></a>
       <div class="links">
-        <a href="#research">Research</a><a href="#people">People</a><a href="#publications">Publications</a><a href="#join">Join Us</a><a href="#contact">Contact</a>
+        <a href="#research">Research</a><a href="#people">People</a><a href="#publications">Publications</a><a href="#news">News</a><a href="#join">Join Us</a><a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
@@ -122,6 +129,18 @@
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Selected publication</p><h2>Featured work</h2></div>
         <article class="publication"><span class="journal">CELL · 2025</span><h3>Regulation of inflammatory responses by pH-dependent transcriptional condensates</h3><p>Wu Z., Pope S.D., et al. This study identifies transcriptional condensates as intracellular pH sensors that translate tissue acidity into gene-specific inflammatory responses.</p></article>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">News</p><h2>News &amp; updates</h2></div>
+        <div class="news-list">
+          <article class="news-item">
+            <div class="news-date">Recruitment</div>
+            <div><h3>We are building our team</h3><p>The Wu Laboratory welcomes applications from postdoctoral fellows, Ph.D. students, and master’s students interested in tissue immunology, biomolecular condensates, and immune-cell adaptation.</p></div>
+          </article>
+        </div>
       </div>
     </section>
 
