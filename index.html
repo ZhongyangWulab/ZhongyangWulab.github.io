@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The Zhongyang Wu Lab at the University of Science and Technology of China studies how tissue state encodes into immune-cell state.">
-  <title>Zhongyang Wu Lab | USTC</title>
+  <meta name="description" content="The Wu Laboratory at USTC studies how tissue physicochemical environments shape gene regulation, inflammation, and immune-cell fate.">
+  <title>Wu Laboratory | USTC</title>
   <style>
     :root { --ink:#102a43; --muted:#52677b; --blue:#087ca7; --cyan:#74c7d5; --pale:#eef8fa; --line:#d8e8ec; --white:#fff; }
     * { box-sizing:border-box; }
@@ -45,6 +45,15 @@
     .profile p { color:var(--muted); }
     .profile-email { display:inline-block; margin:-4px 0 14px; color:var(--blue); font-weight:650; text-decoration:none; }
     .profile-email:hover { text-decoration:underline; }
+    .team-heading { margin:58px 0 22px; font-family:Georgia,"Times New Roman",serif; font-size:30px; }
+    .team-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+    .member-card { display:grid; grid-template-columns:140px 1fr; gap:24px; padding:24px; border:1px solid var(--line); border-radius:15px; background:#fff; box-shadow:0 8px 26px rgba(16,42,67,.05); }
+    .member-card img { width:140px; height:140px; object-fit:cover; border-radius:12px; }
+    .member-card h3 { margin:0 0 2px; }
+    .member-role { margin:0 0 8px; color:var(--blue); font-size:14px; font-weight:750; }
+    .member-email { display:inline-block; margin-bottom:12px; color:var(--muted); font-size:13px; text-decoration:none; overflow-wrap:anywhere; }
+    .member-email:hover { color:var(--blue); text-decoration:underline; }
+    .member-bio { margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
     .publication { padding:28px; border-left:4px solid var(--cyan); background:var(--pale); }
     .publication .journal { color:var(--blue); font-weight:800; }
     .publication h3 { font-family:Georgia,"Times New Roman",serif; font-size:24px; }
@@ -69,6 +78,7 @@
       .portrait { width:230px; justify-self:start; }
       .hero-illustration { width:min(92%,390px); justify-self:center; transform:none; }
       .cards,.contact-grid { grid-template-columns:1fr; }
+      .team-grid { grid-template-columns:1fr; }
       .profile { grid-template-columns:120px 1fr; gap:22px; }
       .profile img { width:120px; }
       .join { grid-template-columns:1fr; }
@@ -79,6 +89,8 @@
       section { padding:62px 0; }
       .profile { grid-template-columns:1fr; }
       .profile img { width:145px; }
+      .member-card { grid-template-columns:100px 1fr; gap:18px; padding:18px; }
+      .member-card img { width:100px; height:100px; }
       .button.alt { display:block; width:max-content; margin:12px 0 0; }
     }
   </style>
@@ -97,7 +109,7 @@
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow">Tissue physiology · Nuclear organization · Immunity</p>
-        <h1>How does tissue microenvironment shape immune-cell state?</h1>
+        <h1>How does tissue chemistry shape immune-cell state?</h1>
         <p class="lead">We investigate how physicochemical features of tissue environments are sensed and encoded by transcriptional, chromatin, and translational systems to control inflammation and cell fate.</p>
         <a class="button" href="#research">Explore our research</a><a class="button alt" href="#join">Join the lab</a>
       </div>
@@ -108,7 +120,7 @@
   <main>
     <section id="research">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Research</p><h2>From tissue microenvironment to gene regulation</h2><p>Tissues are dynamic physicochemical environments. We seek general principles that explain how physiological variables reshape gene-regulatory machinery and guide immune-cell adaptation.</p></div>
+        <div class="section-head"><p class="eyebrow">Research</p><h2>From tissue chemistry to gene regulation</h2><p>Tissues are dynamic physicochemical environments. We seek general principles that explain how physiological variables reshape gene-regulatory machinery and guide immune-cell adaptation.</p></div>
         <div class="cards">
           <article class="card"><span class="number">01</span><h3>Physiological sensing by nuclear condensates</h3><p>We study how pH and related environmental cues alter the physical state of transcriptional and chromatin-regulatory assemblies.</p></article>
           <article class="card"><span class="number">02</span><h3>Inflammatory gene regulation and memory</h3><p>We investigate how environmental states are encoded in chromatin organization, transcriptional dynamics, and lasting inflammatory programs.</p></article>
@@ -125,11 +137,50 @@
           <div>
             <h3>Zhongyang Wu, Ph.D.</h3>
             <a class="profile-email" href="mailto:wuzhongyang@ustc.edu.cn">wuzhongyang@ustc.edu.cn</a>
-            <p><strong>Professor and Principal Investigator</strong> </p>
-            <p>Zhongyang Wu is a professor and Principal Investigator in the Division of Life Sciences and Medicine， and the State Key Laboratory of Immune Response and Immunotherapy at the University of Science and Technology of China (USTC). He grew up in Jiangxi, China, and earned his B.S. from Nanchang University. He received his Ph.D. from Tsinghua University with Dr. Xiaohua Shen, studing epigenetic regulation in stem cells. He then completed his postdoctoral training with Dr. Xu Zhou at Boston Children’s Hospital and Harvard Medical School, investigating how immune cells sense and respond to environmental pH.</p>
+            <p><strong>Professor and Principal Investigator</strong><br>Division of Life Sciences and Medicine, University of Science and Technology of China<br>State Key Laboratory of Immune Response and Immunotherapy</p>
+            <p>Zhongyang Wu is a professor and principal investigator in the Division of Life Sciences and Medicine and the State Key Laboratory of Immune Response and Immunotherapy at the University of Science and Technology of China (USTC). He grew up in Jiangxi, China, and earned his B.S. from Nanchang University. He received his Ph.D. from Tsinghua University under the mentorship of Dr. Xiaohua Shen, where he studied epigenetic regulation in stem cells. He then completed his postdoctoral training with Dr. Xu Zhou at Boston Children’s Hospital and Harvard Medical School, investigating how immune cells—particularly macrophages—sense environmental pH.</p>
             <p>Since 2026, the Wu Lab has sought to understand how the physicochemical properties of tissue microenvironments reshape tissue niches and regulate myeloid-cell development, function, and adaptation through the physical organization of gene-control machinery.</p>
             <p>Outside the lab, Zhongyang enjoys calligraphy, cooking, and playing badminton.</p>
           </div>
+        </div>
+        <h3 class="team-heading">Students</h3>
+        <div class="team-grid">
+          <article class="member-card">
+            <img src="assets/weifeng-sun.jpg" alt="Weifeng Sun">
+            <div>
+              <h3>Weifeng Sun</h3>
+              <p class="member-role">Master’s Student</p>
+              <a class="member-email" href="mailto:sunweifeng@mail.ustc.edu.cn">sunweifeng@mail.ustc.edu.cn</a>
+              <p class="member-bio">Weifeng was born and raised in Shandong, China. She earned her B.S. in Biopharmaceutical Sciences from Shandong First Medical University in 2025 and joined the Wu Lab in 2026. Her research focuses on how immune cells develop memory of and adapt to environmental stresses in tissues. Outside the lab, she enjoys traveling, spending time with her cat, and daydreaming.</p>
+            </div>
+          </article>
+          <article class="member-card">
+            <img src="assets/ziqin-hua.jpg" alt="Ziqin Hua">
+            <div>
+              <h3>Ziqin Hua</h3>
+              <p class="member-role">Master’s Student</p>
+              <a class="member-email" href="mailto:huaziq@mail.ustc.edu.cn">huaziq@mail.ustc.edu.cn</a>
+              <p class="member-bio">Ziqin was born and raised in Jiangsu, China. He earned his B.S. from Changzhou University in 2025 and joined the Wu Lab in 2026. His research focuses on how tissue acidosis reshapes chromatin states and epigenetic regulation in macrophages. Outside the lab, he enjoys bodybuilding, cycling, and first-person shooter games.</p>
+            </div>
+          </article>
+          <article class="member-card">
+            <img src="assets/ziqi-dong.jpg" alt="Ziqi Dong">
+            <div>
+              <h3>Ziqi Dong</h3>
+              <p class="member-role">Master’s Student</p>
+              <a class="member-email" href="mailto:stern@mail.ustc.edu.cn">stern@mail.ustc.edu.cn</a>
+              <p class="member-bio">Ziqi grew up in Henan, China. She earned her B.S. from Northeast Agricultural University in 2026 and joined the Wu Lab the same year. Her research focuses on how physicochemical cues in tissue microenvironments shape monocyte differentiation and myeloid-cell fate decisions. Outside the lab, she enjoys working out, cooking, and reading.</p>
+            </div>
+          </article>
+          <article class="member-card">
+            <img src="assets/xueyu-feng.jpg" alt="Xueyu Feng">
+            <div>
+              <h3>Xueyu Feng</h3>
+              <p class="member-role">Undergraduate Student · Incoming Master’s Student (2027)</p>
+              <a class="member-email" href="mailto:fengxueyu@mail.ustc.edu.cn">fengxueyu@mail.ustc.edu.cn</a>
+              <p class="member-bio">Xueyu was born and raised in Heilongjiang, China. He is pursuing his B.S. at USTC and expects to graduate in 2027. He joined the Wu Lab as an undergraduate researcher in 2026 and will continue as a master’s student in 2027. Previously, he worked on an undergraduate research project involving bispecific antibodies for colorectal cancer treatment.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
