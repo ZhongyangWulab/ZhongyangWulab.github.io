@@ -39,13 +39,13 @@
     .number { color:var(--cyan); font-size:13px; font-weight:850; letter-spacing:.12em; }
     h3 { margin:10px 0 10px; font-size:20px; line-height:1.35; }
     .card p { margin:0; color:var(--muted); }
-    .profile { display:grid; grid-template-columns:180px 1fr; gap:34px; align-items:start; max-width:850px; }
-    .profile img { width:180px; border-radius:10px; }
+    .profile { display:grid; grid-template-columns:155px 1fr; gap:30px; align-items:start; max-width:900px; }
+    .profile img { width:155px; border-radius:10px; }
     .profile h3 { margin-top:0; font-size:25px; }
     .profile p { color:var(--muted); }
     .profile-email { display:inline-block; margin:-4px 0 14px; color:var(--blue); font-weight:650; text-decoration:none; }
     .profile-email:hover { text-decoration:underline; }
-    .team-heading { margin:58px 0 22px; font-family:Georgia,"Times New Roman",serif; font-size:30px; }
+    .team-heading { margin:52px 0 22px; font-family:Georgia,"Times New Roman",serif; font-size:30px; }
     .team-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
     .member-card { display:grid; grid-template-columns:140px 1fr; gap:24px; padding:24px; border:1px solid var(--line); border-radius:15px; background:#fff; box-shadow:0 8px 26px rgba(16,42,67,.05); }
     .member-card img { width:140px; height:140px; object-fit:cover; border-radius:12px; }
@@ -54,6 +54,8 @@
     .member-email { display:inline-block; margin-bottom:12px; color:var(--muted); font-size:13px; text-decoration:none; overflow-wrap:anywhere; }
     .member-email:hover { color:var(--blue); text-decoration:underline; }
     .member-bio { margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
+    .manager-card { max-width:900px; grid-template-columns:135px 1fr; }
+    .manager-card img { width:135px; height:135px; }
     .publication { padding:28px; border-left:4px solid var(--cyan); background:var(--pale); }
     .publication .journal { color:var(--blue); font-weight:800; }
     .publication h3 { font-family:Georgia,"Times New Roman",serif; font-size:24px; }
@@ -79,8 +81,8 @@
       .hero-illustration { width:min(92%,390px); justify-self:center; transform:none; }
       .cards,.contact-grid { grid-template-columns:1fr; }
       .team-grid { grid-template-columns:1fr; }
-      .profile { grid-template-columns:120px 1fr; gap:22px; }
-      .profile img { width:120px; }
+      .profile { grid-template-columns:115px 1fr; gap:22px; }
+      .profile img { width:115px; }
       .join { grid-template-columns:1fr; }
       .news-item { grid-template-columns:1fr; gap:6px; }
     }
@@ -88,7 +90,7 @@
       .wrap { width:min(100% - 28px,1120px); }
       section { padding:62px 0; }
       .profile { grid-template-columns:1fr; }
-      .profile img { width:145px; }
+      .profile img { width:120px; }
       .member-card { grid-template-columns:100px 1fr; gap:18px; padding:18px; }
       .member-card img { width:100px; height:100px; }
       .button.alt { display:block; width:max-content; margin:12px 0 0; }
@@ -143,6 +145,15 @@
             <p>Outside the lab, Zhongyang enjoys calligraphy, cooking, and playing badminton.</p>
           </div>
         </div>
+        <h3 class="team-heading">Lab Administration</h3>
+        <article class="member-card manager-card">
+          <img src="assets/li-fang.jpg" alt="Li Fang">
+          <div>
+            <h3>Li Fang</h3>
+            <p class="member-role">Lab Manager</p>
+            <p class="member-bio">Li was born and raised in Anhui, China. She earned her B.Ec. from Anhui University of Finance and Economics in 2015 and her master’s degree in finance from Huaqiao University in 2018. She worked at the Agricultural Bank of China from 2018 to 2025 and joined the Wu Lab as lab manager in 2026. Outside the lab, she enjoys spending time with her child and playing the erhu.</p>
+          </div>
+        </article>
         <h3 class="team-heading">Students</h3>
         <div class="team-grid">
           <article class="member-card">
