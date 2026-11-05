@@ -66,6 +66,13 @@
     .news-date { color:var(--blue); font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
     .news-item h3 { margin:0 0 6px; }
     .news-item p { margin:0; color:var(--muted); }
+    .news-feature { display:block; max-width:100%; padding:0 0 30px; }
+    .news-feature .news-date { display:block; margin-bottom:8px; }
+    .news-feature h3 { font-family:Georgia,"Times New Roman",serif; font-size:30px; }
+    .news-gallery { display:grid; grid-template-columns:1.35fr 1fr; gap:14px; margin-top:22px; }
+    .news-gallery img { width:100%; height:320px; object-fit:cover; border-radius:14px; border:1px solid var(--line); }
+    .news-gallery img:first-child { object-position:center 48%; }
+    .news-gallery img:last-child { object-position:center 50%; }
     .join { display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; padding:42px; border-radius:18px; color:#fff; background:var(--ink); }
     .join h2 { margin-bottom:8px; }
     .join p { max-width:730px; margin:0; color:#d8e7ee; }
@@ -85,6 +92,8 @@
       .profile img { width:115px; }
       .join { grid-template-columns:1fr; }
       .news-item { grid-template-columns:1fr; gap:6px; }
+      .news-gallery { grid-template-columns:1fr; }
+      .news-gallery img { height:280px; }
     }
     @media (max-width:520px) {
       .wrap { width:min(100% - 28px,1120px); }
@@ -151,7 +160,7 @@
           <div>
             <h3>Fang Li</h3>
             <p class="member-role">Lab Manager</p>
-            <p class="member-bio">Fang was born and raised in Anhui, China. She earned her B.Ec. from Anhui University of Finance and Economics in 2015 and her master’s degree in finance from Huaqiao University in 2018. Before joining the Wu Lab as Las Manager in 2026, she worked at the Agricultural Bank of China from 2018 to 2025. Outside the lab, Fang enjoys spending time with her family and playing the erhu, a traditional Chinese bowed instrument.</p>
+            <p class="member-bio">Fang was born and raised in Anhui, China. She received her B.Ec. from Anhui University of Finance and Economics in 2015 and her master’s degree in finance from Huaqiao University in 2018. Before joining the Wu Lab as Lab Manager in 2026, she worked at the Agricultural Bank of China from 2018 to 2025. Outside the lab, Fang enjoys spending time with her family and playing the erhu.</p>
           </div>
         </article>
         <h3 class="team-heading">Students</h3>
@@ -207,6 +216,17 @@
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">News</p><h2>News &amp; updates</h2></div>
         <div class="news-list">
+          <article class="news-item news-feature">
+            <div class="news-date">November 2026</div>
+            <div>
+              <h3>The Wu Lab is ready for discovery</h3>
+              <p>Our new laboratory at USTC is now fully established and operational. With our molecular biology and cell-culture facilities in place, we are excited to begin experiments and explore how tissue microenvironments shape immune-cell state and function.</p>
+              <div class="news-gallery">
+                <img src="assets/wu-lab-main-bench.jpg" alt="The newly established Wu Laboratory at USTC">
+                <img src="assets/wu-lab-cell-culture.jpg" alt="Cell-culture facilities in the Wu Laboratory">
+              </div>
+            </div>
+          </article>
           <article class="news-item">
             <div class="news-date">Recruitment</div>
             <div><h3>We are building our team</h3><p>The Wu Laboratory welcomes applications from postdoctoral fellows, Ph.D. students, and master’s students interested in tissue immunology, biomolecular condensates, and immune-cell adaptation.</p></div>
