@@ -4,7 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The Wu Laboratory at USTC studies how tissue physicochemical environments shape gene regulation, inflammation, and immune-cell fate.">
+  <link rel="canonical" href="https://zhongyangwulab.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Wu Laboratory | USTC">
+  <meta property="og:description" content="We study how tissue physicochemical environments shape myeloid-cell states, inflammation, and immune adaptation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zhongyangwulab.github.io/">
+  <meta property="og:image" content="https://zhongyangwulab.github.io/assets/hero-split-ph-cell.png">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Wu Laboratory | USTC</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ResearchOrganization",
+        "name": "Wu Laboratory",
+        "url": "https://zhongyangwulab.github.io/",
+        "email": "wuzhongyang@ustc.edu.cn",
+        "parentOrganization": {"@type": "CollegeOrUniversity", "name": "University of Science and Technology of China"}
+      },
+      {
+        "@type": "Person",
+        "name": "Zhongyang Wu",
+        "jobTitle": "Professor",
+        "email": "wuzhongyang@ustc.edu.cn",
+        "affiliation": {"@type": "CollegeOrUniversity", "name": "University of Science and Technology of China"},
+        "sameAs": [
+          "https://biomed.ustc.edu.cn/2026/0910/c41924a752892/page.htm",
+          "https://scholar.google.com/citations?hl=en&user=sML_27cAAAAJ&view_op=list_works&sortby=pubdate",
+          "https://orcid.org/0000-0002-3823-6014"
+        ]
+      }
+    ]
+  }
+  </script>
   <style>
     :root { --ink:#102a43; --muted:#52677b; --blue:#087ca7; --cyan:#74c7d5; --pale:#eef8fa; --line:#d8e8ec; --white:#fff; }
     * { box-sizing:border-box; }
@@ -19,6 +53,7 @@
     .links { display:flex; gap:24px; font-size:14px; font-weight:650; }
     .links a { text-decoration:none; }
     .links a:hover { color:var(--blue); }
+    .menu-toggle { display:none; border:1px solid var(--line); border-radius:9px; padding:8px 11px; color:var(--ink); background:#fff; font:inherit; font-weight:750; cursor:pointer; }
     .hero { position:relative; overflow:hidden; padding:92px 0 84px; background:linear-gradient(135deg,#f8fcfd 15%,#e8f6f8 100%); }
     .hero:after { content:""; position:absolute; width:460px; height:460px; right:-120px; top:-160px; border:72px solid rgba(116,199,213,.17); border-radius:50%; }
     .hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:1.35fr .65fr; align-items:center; gap:68px; }
@@ -45,6 +80,9 @@
     .profile p { color:var(--muted); }
     .profile-email { display:inline-block; margin:-4px 0 14px; color:var(--blue); font-weight:650; text-decoration:none; }
     .profile-email:hover { text-decoration:underline; }
+    .profile-links { display:flex; flex-wrap:wrap; gap:14px; margin:4px 0 18px; }
+    .profile-links a,.publication-links a { color:var(--blue); font-size:14px; font-weight:750; text-decoration:none; }
+    .profile-links a:hover,.publication-links a:hover { text-decoration:underline; }
     .team-heading { margin:52px 0 22px; font-family:Georgia,"Times New Roman",serif; font-size:30px; }
     .team-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
     .member-card { display:grid; grid-template-columns:140px 1fr; gap:24px; padding:24px; border:1px solid var(--line); border-radius:15px; background:#fff; box-shadow:0 8px 26px rgba(16,42,67,.05); }
@@ -60,6 +98,7 @@
     .publication .journal { color:var(--blue); font-weight:800; }
     .publication h3 { font-family:Georgia,"Times New Roman",serif; font-size:24px; }
     .publication p { color:var(--muted); }
+    .publication-links { display:flex; flex-wrap:wrap; gap:18px; margin-top:16px; }
     .news-list { display:grid; gap:16px; max-width:900px; }
     .news-item { display:grid; grid-template-columns:150px 1fr; gap:28px; padding:24px 0; border-top:1px solid var(--line); }
     .news-item:last-child { border-bottom:1px solid var(--line); }
@@ -80,7 +119,11 @@
     .contact-grid p { color:var(--muted); }
     footer { padding:28px 0; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
     @media (max-width:820px) {
-      .links { display:none; }
+      .nav-inner { position:relative; }
+      .menu-toggle { display:block; }
+      .links { display:none; position:absolute; top:64px; left:0; right:0; padding:16px 20px 20px; border:1px solid var(--line); border-radius:0 0 14px 14px; background:rgba(255,255,255,.98); box-shadow:0 16px 30px rgba(16,42,67,.12); }
+      .links.open { display:grid; grid-template-columns:repeat(2,1fr); gap:12px 20px; }
+      .links a { padding:5px 0; }
       .hero { padding:64px 0; }
       .hero-grid { grid-template-columns:1fr; gap:42px; }
       .portrait { width:230px; justify-self:start; }
@@ -110,7 +153,8 @@
   <nav>
     <div class="wrap nav-inner">
       <a class="brand" href="#home">WU <span>LABORATORY</span></a>
-      <div class="links">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-links">Menu</button>
+      <div class="links" id="site-links">
         <a href="#research">Research</a><a href="#people">People</a><a href="#publications">Publications</a><a href="#news">News</a><a href="#join">Join Us</a><a href="#contact">Contact</a>
       </div>
     </div>
@@ -131,11 +175,11 @@
   <main>
     <section id="research">
       <div class="wrap">
-        <div class="section-head"><p class="eyebrow">Research</p><h2>From tissue chemistry to gene regulation</h2><p>Tissues are dynamic physicochemical environments. We seek general principles that explain how physiological variables reshape gene-regulatory machinery and guide immune-cell adaptation.</p></div>
+        <div class="section-head"><p class="eyebrow">Research</p><h2>How tissue environments shape myeloid-cell states</h2><p>We study how pH and other physiological variables are sensed, decoded across molecular layers, and translated into myeloid-cell differentiation, inflammatory function, memory, and recovery.</p></div>
         <div class="cards">
-          <article class="card"><span class="number">01</span><h3>Physiological sensing by nuclear condensates</h3><p>We study how pH and related environmental cues alter the physical state of transcriptional and chromatin-regulatory assemblies.</p></article>
-          <article class="card"><span class="number">02</span><h3>Inflammatory gene regulation and memory</h3><p>We investigate how environmental states are encoded in chromatin organization, transcriptional dynamics, and lasting inflammatory programs.</p></article>
-          <article class="card"><span class="number">03</span><h3>Myeloid-cell identity and adaptation</h3><p>We explore how tissue physiology influences macrophage and monocyte state, differentiation, function, and disease-associated behavior.</p></article>
+          <article class="card"><span class="number">01</span><h3>Sensing tissue physiology</h3><p>How do myeloid cells detect acidity and other physicochemical changes in their local environment? We investigate pH-sensitive condensates and nuclear sensing mechanisms.</p></article>
+          <article class="card"><span class="number">02</span><h3>Building immune-cell states</h3><p>How are environmental signals integrated with inflammatory and tissue cues to shape transcription, chromatin organization, and myeloid-cell fate?</p></article>
+          <article class="card"><span class="number">03</span><h3>Adaptation, memory, and recovery</h3><p>What persists after the tissue environment recovers, and how do aging and disease alter immune-cell adaptation and state reconstruction?</p></article>
         </div>
       </div>
     </section>
@@ -148,8 +192,9 @@
           <div>
             <h3>Zhongyang Wu, Ph.D.</h3>
             <a class="profile-email" href="mailto:wuzhongyang@ustc.edu.cn">wuzhongyang@ustc.edu.cn</a>
-            <p><strong>Professor and Principal Investigator</strong><br>Division of Life Sciences and Medicine, University of Science and Technology of China<br>State Key Laboratory of Immune Response and Immunotherapy</p>
-            <p>Zhongyang Wu is a professor and principal investigator in the Division of Life Sciences and Medicine and the State Key Laboratory of Immune Response and Immunotherapy at the University of Science and Technology of China (USTC). He grew up in Jiangxi, China, and earned his B.S. from Nanchang University. He received his Ph.D. from Tsinghua University under the mentorship of Dr. Xiaohua Shen, where he studied epigenetic regulation in stem cells. He then completed his postdoctoral training with Dr. Xu Zhou at Boston Children’s Hospital and Harvard Medical School, investigating how immune cells—particularly macrophages—sense environmental pH.</p>
+            <div class="profile-links"><a href="https://biomed.ustc.edu.cn/2026/0910/c41924a752892/page.htm" target="_blank" rel="noopener">USTC Profile</a><a href="https://scholar.google.com/citations?hl=en&amp;user=sML_27cAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener">Google Scholar</a><a href="https://orcid.org/0000-0002-3823-6014" target="_blank" rel="noopener">ORCID</a></div>
+            <p><strong>Professor</strong><br>Division of Life Sciences and Medicine, University of Science and Technology of China<br>State Key Laboratory of Immune Response and Immunotherapy</p>
+            <p>Zhongyang Wu is a Professor at the University of Science and Technology of China (USTC). He grew up in Jiangxi, China, and earned his B.S. from Nanchang University. He received his Ph.D. from Tsinghua University under the mentorship of Dr. Xiaohua Shen, where he studied epigenetic regulation in stem cells. He then completed his postdoctoral training with Dr. Xu Zhou at Boston Children’s Hospital and Harvard Medical School, investigating how immune cells—particularly macrophages—sense environmental pH.</p>
             <p>Since 2026, the Wu Lab has sought to understand how the physicochemical properties of tissue microenvironments reshape tissue niches and regulate myeloid-cell development, function, and adaptation through the physical organization of gene-control machinery.</p>
             <p>Outside the lab, Zhongyang enjoys calligraphy, cooking, and playing badminton.</p>
           </div>
@@ -208,7 +253,7 @@
     <section id="publications">
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Selected publication</p><h2>Featured work</h2></div>
-        <article class="publication"><span class="journal">CELL · 2025</span><h3>Regulation of inflammatory responses by pH-dependent transcriptional condensates</h3><p>Wu Z., Pope S.D., et al. This study identifies transcriptional condensates as intracellular pH sensors that translate tissue acidity into gene-specific inflammatory responses.</p></article>
+        <article class="publication"><span class="journal">CELL · 2025</span><h3>Regulation of inflammatory responses by pH-dependent transcriptional condensates</h3><p>Wu Z., Pope S.D., et al. This study identifies transcriptional condensates as intracellular pH sensors that translate tissue acidity into gene-specific inflammatory responses.</p><div class="publication-links"><a href="https://doi.org/10.1016/j.cell.2025.06.033" target="_blank" rel="noopener">View article</a><a href="https://pubmed.ncbi.nlm.nih.gov/40680734/" target="_blank" rel="noopener">PubMed</a><a href="https://scholar.google.com/scholar?q=Regulation+of+inflammatory+responses+by+pH-dependent+transcriptional+condensates" target="_blank" rel="noopener">Google Scholar</a></div></article>
       </div>
     </section>
 
@@ -219,8 +264,8 @@
           <article class="news-item news-feature">
             <div class="news-date">November 2026</div>
             <div>
-              <h3>We are ready for discovery</h3>
-              <p>Our new laboratory at USTC is now fully established and operational. We are excited to begin experiments and explore fun things.</p>
+              <h3>The Wu Lab is now fully operational</h3>
+              <p>Our new laboratory at USTC is now fully established and operational. We are excited to begin experiments and pursue new questions at the interface of tissue physiology, gene regulation, and immunity.</p>
               <div class="news-gallery">
                 <img src="assets/wu-lab-cell-culture.jpg" alt="Molecular biology workbench in the newly established Wu Laboratory">
                 <img src="assets/wu-lab-main-bench.jpg" alt="Cell-culture facilities in the Wu Laboratory">
@@ -245,10 +290,22 @@
     <section id="contact">
       <div class="wrap">
         <div class="section-head"><p class="eyebrow">Contact</p><h2>Find us at USTC</h2></div>
-        <div class="contact-grid"><div><h3>Email</h3><p><a href="mailto:wuzhongyang@ustc.edu.cn">wuzhongyang@ustc.edu.cn</a></p></div><div><h3>Address</h3><p>Yisuan Building, West Campus<br>University of Science and Technology of China<br>Hefei, Anhui, China</p></div></div>
+        <div class="contact-grid"><div><h3>Email</h3><p><a href="mailto:wuzhongyang@ustc.edu.cn">wuzhongyang@ustc.edu.cn</a></p></div><div><h3>Address</h3><p>Medical and Computational Intelligence Frontier Center<br>West Campus, University of Science and Technology of China<br>Hefei, Anhui, China</p></div></div>
       </div>
     </section>
   </main>
   <footer><div class="wrap">© 2026 Wu Laboratory · University of Science and Technology of China</div></footer>
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const siteLinks = document.querySelector('.links');
+    menuButton.addEventListener('click', () => {
+      const isOpen = siteLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+    siteLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      siteLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+  </script>
 </body>
 </html>
